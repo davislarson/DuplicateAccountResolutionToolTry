@@ -1,0 +1,31 @@
+.App {
+	display: flex;
+}
+
+.sendButton {
+	border: none;
+	text-align: center;
+	text-decoration: none;
+	font-size: 16px;
+	margin: 0 .5rem;
+	padding: 0.2rem 1rem;
+	cursor: pointer;
+}
+.sendButton:active {
+	background-color: #4caf50;
+	color: white;
+}
+
+.uuid-input {
+   width: 100%;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+}
+
+.uuid-section {
+	width: 50%;
+}
+
+.app-container {
+   margin: 10px 15px;
+}
