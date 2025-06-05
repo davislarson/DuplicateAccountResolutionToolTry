@@ -17,7 +17,7 @@ function App() {
 	}
 
 	async function handleMerge() {
-		let userConfirmed = confirm("Are you sure you want to merge these accounts?");
+		let userConfirmed = confirm("Are you sure? This will delete the account not chosen. This cannot be undone.");
 		if (!userConfirmed) {
 			console.log("Merge cancelled by user.");
 			return;
@@ -34,8 +34,8 @@ function App() {
 
 	return (
 		<>
-			<div className="d-flex flex-column justify-content-center align-items-center mb-5 app-container">
-				<div className="App">
+			<div className="App">
+				<div className="page">
 					<UuidSection
 						id="first"
 						chooseMainAccount={handleChoice}
@@ -49,7 +49,7 @@ function App() {
 						mainAccount={mainAccount}
 					/>
 				</div>
-				<button onClick={handleMerge}>Merge</button>
+				<button onClick={handleMerge} className="sendButton">Done</button>
 			</div>
 		</>
 	);

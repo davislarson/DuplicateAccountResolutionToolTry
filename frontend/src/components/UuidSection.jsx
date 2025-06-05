@@ -90,34 +90,38 @@ function UuidSection({ id, chooseMainAccount, mainAccount, onSearch }) {
 
 	// Conditional style based on mainAccount
 	const containerStyle =
-		mainAccount && mainAccount.uuid === searchedUuid ? { border: "4px solid green" } : { border: "1px dashed black" };
+		mainAccount && mainAccount.uuid === searchedUuid ? { border: "4px solid green" } : { border: "1px dashed white" };
 
 	return (
 		<>
 			<div className="uuid-section m-2 px-5 py-3" style={containerStyle}>
+				<div className="search-bar">
+
 				<form onSubmit={handleSubmit}>
 					<label className="form-label">
-						Search for CES UUID: 
+						Search for CES UUID:
 						<input type="text" name="uuid" className="uuid-input" value={uuid} onChange={handleUuidChange} />
 					</label>
 					<button type="submit" className="sendButton">
 						Send
 					</button>
 				</form>
+				</div>
 				<div className="row">
 					{searchedUuid && (
 						<div>
-							<h2>
+							<h3>
 								cesUUID:
 								<span
 									style={{
 										fontWeight: "normal",
 										fontSize: "1.5rem",
+										marginLeft: "0.5rem",
 									}}
 								>
-									{" " + searchedUuid}
+									{searchedUuid}
 								</span>
-							</h2>
+							</h3>
 						</div>
 					)}
 					{isLoading ? (

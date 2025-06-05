@@ -1,6 +1,28 @@
-.App {
-	display: flex;
+:root{
+	--background-color: #2f2d2d;
+	--primary-color: #4caf50;
+	--secondary-color: #f44336;
+	--text-color: #dee1e2;
+	--input-bg-color: #9e9d9d;
+	--input-border-color: #2f2d2d;
+
+	background-color: #2f2d2d;
 }
+
+.page {
+	display: flex;
+	background-color: var(--background-color);
+	color: var(--text-color);
+}
+.App {
+ 	background-color: var(--background-color);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 2rem;
+}
+
 
 .sendButton {
 	border: none;
@@ -10,16 +32,20 @@
 	margin: 0 .5rem;
 	padding: 0.2rem 1rem;
 	cursor: pointer;
+	background-color: var(--input-bg-color);
 }
 .sendButton:active {
 	background-color: #4caf50;
-	color: white;
+	color: var(--text-color);
 }
 
 .uuid-input {
-   width: 100%;
-	border: 1px solid #ccc;
+	border: 1px solid var(--input-border-color);
 	border-radius: 4px;
+	width: 400px;
+	margin: 0 .1rem;
+	padding: 0 .2rem;
+	background-color: var(--input-bg-color);
 }
 
 .uuid-section {
@@ -28,4 +54,13 @@
 
 .app-container {
    margin: 10px 15px;
+}
+
+.form-label {
+	margin-bottom: .5rem;
+	font-weight: bold;
+}
+
+.search-bar {
+	margin: 1rem 0 2rem 0;
 }
