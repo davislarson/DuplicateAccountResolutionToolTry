@@ -90,7 +90,7 @@ function UuidSection({ id, chooseMainAccount, mainAccount, onSearch }) {
 
 	// Conditional style based on mainAccount
 	const containerStyle =
-		mainAccount && mainAccount.uuid === searchedUuid ? { border: "4px solid green" } : { border: "1px dashed white" };
+		mainAccount && mainAccount.uuid === searchedUuid ? { border: "2px solid green" } : { border: "2px dashed white" };
 
 	return (
 		<>
