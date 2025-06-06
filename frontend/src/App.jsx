@@ -8,6 +8,7 @@ function App() {
 
 	function handleChoice(choice) {
 		setMainAccount(choice);
+		// TODO there may be other things to do here
 	}
 
 	function handleSearch(id, searchedUuid) {
@@ -19,10 +20,10 @@ function App() {
 	async function handleMerge() {
 		let userConfirmed = confirm("Are you sure? This will delete the account not chosen. This cannot be undone.");
 		if (!userConfirmed) {
-			console.log("Merge cancelled by user.");
+			console.log("Delete cancelled by user.");
 			return;
 		} else {
-			console.log("Merge confirmed by user.");
+			console.log("Delete confirmed by user.");
 			if (mainAccount) {
 				const response = await mergeAccounts(searches, mainAccount);
 
@@ -49,7 +50,7 @@ function App() {
 						mainAccount={mainAccount}
 					/>
 				</div>
-				<button onClick={handleMerge} className="sendButton">Done</button>
+				{/* <button onClick={handleMerge} className="sendButton">Done</button> */}
 			</div>
 		</>
 	);

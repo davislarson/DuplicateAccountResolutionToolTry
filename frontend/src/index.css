@@ -23,6 +23,25 @@
 	margin-bottom: 2rem;
 }
 
+.actionButtons {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 1rem 0;
+}	
+
+
+.deleteButton {
+	border: none;
+	text-align: center;
+	text-decoration: none;
+	font-size: 16px;
+	margin: 0 .5rem;
+	padding: 0.2rem 1rem;
+	cursor: pointer;
+	background-color: var(--secondary-color);
+	color: var(--text-color);
+}
 
 .sendButton {
 	border: none;
@@ -35,7 +54,7 @@
 	background-color: var(--input-bg-color);
 }
 .sendButton:active {
-	background-color: #4caf50;
+	background-color: var(--primary-color);
 	color: var(--text-color);
 }
 
