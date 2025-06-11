@@ -12,26 +12,24 @@ function App() {
 	}
 
 	function handleSearch(id, searchedUuid) {
-		console.log("Searched UUID:", searchedUuid);
-		console.log("ID:", id);
 		setSearches((prev) => ({ ...prev, [id]: searchedUuid }));
 	}
 
-	async function handleMerge() {
-		let userConfirmed = confirm("Are you sure? This will delete the account not chosen. This cannot be undone.");
-		if (!userConfirmed) {
-			console.log("Delete cancelled by user.");
-			return;
-		} else {
-			console.log("Delete confirmed by user.");
-			if (mainAccount) {
-				const response = await mergeAccounts(searches, mainAccount);
+	// async function handleMerge() {
+	// 	let userConfirmed = confirm("Are you sure? This will delete the account not chosen. This cannot be undone.");
+	// 	if (!userConfirmed) {
+	// 		console.log("Delete cancelled by user.");
+	// 		return;
+	// 	} else {
+	// 		console.log("Delete confirmed by user.");
+	// 		if (mainAccount) {
+	// 			const response = await mergeAccounts(searches, mainAccount);
 
-			} else {
-				console.error("Main account is not selected");
-			}
-		}
-	}
+	// 		} else {
+	// 			console.error("Main account is not selected");
+	// 		}
+	// 	}
+	// }
 
 	return (
 		<>
