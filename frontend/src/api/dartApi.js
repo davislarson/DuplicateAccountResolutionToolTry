@@ -40,3 +40,37 @@ export async function mergeAccounts(searches, mainAccount) {
 		});
 
 }
+
+export async function deleteAccount(oktaIds) {
+	console.log("deleteAccount called with oktaIds:", oktaIds);
+	const response = await fetch(`${backendUrl}/delete`, {
+		method: "POST",
+		headers: {
+			"Content-Type": "application/json",
+		},
+		body: JSON.stringify({ oktaIds: oktaIds }),
+	});
+
+	if (!response.ok) {
+		throw new Error("Failed to delete account");
+	}
+
+	const data = await response.json();
+	return data; // Return the response data for further processing if needed
+}
+
+export async function fetchCesUUIDFromChurchAccountID(churchAccountID) {
+	const response = await fetch(`${backendUrl}/fromChurchAccountID`, {
+		method: "POST",
+		headers: {
+			"Content-Type": "application/json",
+		},
+		body: JSON.stringify({ churchAccountID: churchAccountID})
+	})
+
+	if (!response.ok) {
+		throw new Error("Failed to fetch CES UUID from Church Account ID");
+	}
+	const data = await response.json();
+	return data.cesUUID; // Return the CES UUID of the churchAccountID given
+}

@@ -13,6 +13,7 @@
 	display: flex;
 	background-color: var(--background-color);
 	color: var(--text-color);
+	width: 100%;
 }
 .App {
  	background-color: var(--background-color);
@@ -61,14 +62,15 @@
 .uuid-input {
 	border: 1px solid var(--input-border-color);
 	border-radius: 4px;
-	width: 400px;
 	margin: 0 .2rem;
 	padding: 0 .2rem;
 	background-color: var(--input-bg-color);
 }
 
 .uuid-section {
-	width: 50%;
+	width: 100%;
+	margin: 2rem;
+	padding: 2rem 3rem;
 }
 
 .app-container {
