@@ -44,10 +44,10 @@ app.post("/ccc/fromUuid", (req, res) => {
 	let config = {
 		method: "post",
 		maxBodyLength: Infinity,
-		url: "https://ccc.dev.ceslogin.org/ccc",
+		url: "",
 		headers: {
 			"Content-Type": "application/json",
-			"x-api-key": "LWNl4udMyc53izwM1dmOQ8pK6X0HSg2kl8AT4TR2",
+			"x-api-key": "",
 		},
 		data: data,
 	};
@@ -71,27 +71,6 @@ app.post("/delete", (req, res) => {
 
 //TODO this is not finished, needs error handling and other stuff
 
-app.post("/fromChurchAccountID", async (req, res) => {
-	const { churchAccountID } = req.body;
-	try {
-		let CESOktaClient = new okta.Client({
-			orgUrl: "https://" + process.env.CES_OKTA_URL,
-			token: process.env.CES_OKTA_API_TOKEN
-		});
-
-		let collection = await CESOktaClient.userApi.listUsers({
-			search: `profile.churchAccountID eq "${churchAccountID}"`,
-		});
-		await collection.each((user) => {
-			if (user.profile.cesUUID) {
-				return res.json({ cesUUID: user.profile.cesUUID });
-			}
-		});
-	} catch (error) {
-		console.error("Error fetching CES UUID from Church Account ID:", error);
-		return res.status(500).json({ error: "Error fetching CES UUID" });
-	}
-});
 
 app.listen(port, () => {
 	console.log(`Server is running on http://localhost:${port}`);
